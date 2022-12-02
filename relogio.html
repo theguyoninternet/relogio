@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        .relogio {
+            width:100vw;
+            height:800px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background: darkmagenta
+        }
+        #h {
+            background: green;
+            width: 120px; 
+            height: 120px;
+            border-radius: 50%;
+        }
+        #m {
+            background: yellow;
+            width: 120px; 
+            height: 120px;
+            border-radius: 50%;
+        }
+        #s {
+            background: red;
+            width: 120px; 
+            height: 120px;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        function hora(){
+            let d = new Date();
+            let s = d.getSeconds;
+            let m = d.getMinutes;
+            let h = d.getHours;
+
+            if(5 % 2 == 0){
+                document.getElementById("s").style.transform = "scale(.5)";
+            }else{
+
+            document.getElementById("s").style.transform = "scale(.2) ";
+            }
+            setTimeout(hora);
+        }
+    </script>
+</head>
+<body>
+    <div class="relogio">
+    <div id="h"> </div>
+    <div id="m"> </div>
+    <div id="s"> </div>
+
+    </div>
+    <script>
+        hora()
+    </script>
+</body>
+</html>
